@@ -122,7 +122,8 @@ app.get('/playlist/tags/:tag/:page', async (req, res, next) => {
     res.sendFile(indexPath);
   });
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  const port = server.address().port;
-  console.log(`Server is running on port ${port}`);
-});
+  const server = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+    const port = server.address().port;
+    console.log(`Server is running on port ${port}`);
+  });
+  
