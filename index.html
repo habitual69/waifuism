@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waifuism API Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="habitual69" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <div class="container mx-auto px-4">
+        <header class="text-center py-12 flex flex-col items-center justify-center">
+            <h1 class="text-4xl font-bold mb-2 text-green-500">waifuism (Unofficial hanime.tv) API</h1>
+            <p class="text-xl mb-4">Fetch content from hanime.tv to use with IPTV clients for seamless entertainment.</p>
+            <a href="https://www.buymeacoffee.com/habitual69" target="_blank" class="flex items-center justify-center">
+                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 217px !important;">
+            </a>
+        </header>        
+
+        <main>
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Endpoints</h2>
+                <div>
+                    <h3 class="text-xl font-semibold">1. Trending Playlist</h3>
+                    <p class="mb-2">Generate a playlist based on trending content, with support for pagination.</p>
+                    <code class="block bg-gray-200 text-gray-700 p-2 rounded mb-2">GET /playlist/trending/:time/:page</code>
+                    <code class="block bg-gray-300 text-gray-700 p-2 rounded">http://localhost:3000/playlist/trending/1</code>
+                    <p class="mt-2"><strong>Parameters:</strong></p>
+                    <ul class="list-disc list-inside">
+                        <li><strong>time:</strong> The time frame for trending content (e.g., daily, weekly).</li>
+                        <li><strong>page:</strong> Page number for pagination.</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold">2. Tag-Based Playlist</h3>
+                    <p class="mb-2">Create a playlist based on a specific tag, also supporting pagination.</p>
+                    <code class="block bg-gray-200 text-gray-700 p-2 rounded mb-2">GET /playlist/tags/:tag/:page</code>
+                    <code class="block bg-gray-300 text-gray-700 p-2 rounded">http://localhost:3000/playlist/tags/3d/1</code>
+                    <p class="mt-2"><strong>Parameters:</strong></p>
+                    <ul class="list-disc list-inside">
+                        <li><strong>tag:</strong> The tag to filter content by.</li>
+                        <li><strong>page:</strong> Page number for pagination.</li>
+                    </ul>
+                    <p class="mt-2">Available tags include: <span class="italic">
+                        <a href="./tags" target="_blank">here</a>.
+                    </span></p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Using This API</h2>
+                <p>To use this API, make a GET request to the desired endpoint with the appropriate parameters. The response will be an M3U8 playlist file that you can use directly in compatible IPTV clients for streaming content.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
