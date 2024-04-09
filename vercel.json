@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/playlist/trending/:time/:page",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/playlist/tags/:tag/:page",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/tags",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
+    ]
+  }
+  
